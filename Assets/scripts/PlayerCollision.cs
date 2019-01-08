@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
+	public GameObject restartUI;
 void OnCollisionEnter(Collision col){
 	if (col.gameObject.tag=="Enemy"){
 		Dies();
@@ -21,8 +22,15 @@ void OnCollisionEnter(Collision col){
 	}
 		void Dies(){
 			//playerdeath audio
+		
 		DataManagement.datamanagement.SaveData();
-			//activate ui or starting game
-         Application.LoadLevel("main");
+		restartUI.gameObject.SetActive(true);
+		GetComponent<Rigidbody>().isKinematic=true;
+		GetComponent<MeshRenderer>().enabled=false;
+		GetComponent<PlayerControls>().enabled=false;
+		GetComponent<PlayerMove>().enabled=false;
+		GetComponent<ParticleSystem>().Play();
+		
+
 		}
 }

@@ -22,6 +22,11 @@ public float cameraSpeed=5.0f;
 		//y position follow
 		camPos.y=player.transform.position.y +2;
 		transform.position=Vector3.Lerp (transform.position,camPos,7.0f * Time.fixedDeltaTime);
+		if(GameInit.gameIsPlaying==false){
+			camPos.x=player.transform.position.x-0.0f;
+			transform.position=camPos;
+
+		}
 
 	}
 }
