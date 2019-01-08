@@ -14,17 +14,20 @@ public float cameraSpeed=5.0f;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(GameInit.gameIsPlaying==true){
 		//X position follow
 		Vector3 camPos=transform.position;
-		camPos.x=player.transform.position.x - - 9.0f;
+		camPos.x=player.transform.position.x + 8.0f;
 		transform.position=Vector3.Lerp(transform.position,camPos,3*Time.deltaTime);
 
 		//y position follow
 		camPos.y=player.transform.position.y +2;
 		transform.position=Vector3.Lerp (transform.position,camPos,7.0f * Time.fixedDeltaTime);
-		if(GameInit.gameIsPlaying==false){
-			camPos.x=player.transform.position.x-0.0f;
-			transform.position=camPos;
+		}
+		else{
+			Vector3 deathCamPos=transform.position;
+			deathCamPos.x=player.transform.position.x;
+			transform.position=Vector3.Lerp(transform.position,deathCamPos,2.0f*Time.fixedDeltaTime);
 
 		}
 

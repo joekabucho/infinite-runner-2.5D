@@ -11,9 +11,14 @@ public class ObjectSpawner : MonoBehaviour {
 	private float coinSpawnTimer = 7.0f;
 	private float enemySpawnTimer = 10.0f;
 	private float treeSpawnTimer = 0.5f;
+	private Vector3 treeXSpawnStartLocation;
+	private float treeStartSpawnTimes= 20;
 
 	// Use this for initialization
-
+void start(){
+treeXSpawnStartLocation.x=-30;
+SpawnStartTrees();
+}
 	// Update is called once per frame
 	void Update () {
 		coinSpawnTimer -= Time.deltaTime;
@@ -31,6 +36,15 @@ public class ObjectSpawner : MonoBehaviour {
 		}
 
 	}
+
+	void SpawnStartTrees(){
+		while (treeStartSpawnTimes>0){
+				GameObject tree=Instantiate (trees[(Random.Range (0, trees.Length))], new Vector3 (treeXSpawnStartLocation.x, 0, Random.Range (3, 22)), Quaternion.Euler(0,Random.Range(0,360),0)) as GameObject;
+				tree.transform.localScale=new Vector3(Random.Range(0.9f,1.5f),Random.Range(0.9f,1.5f),Random.Range(0.9f,1.5f));
+				treeXSpawnStartLocation.x=treeXSpawnStartLocation.x+5;
+				treeStartSpawnTimes--;
+		}
+	}
 	void spawnCoins () {
 		Instantiate (coins[(Random.Range (0, coins.Length))], new Vector3 (player.transform.position.x + 30, Random.Range (2, 8), 0), Quaternion.identity);
 		coinSpawnTimer = Random.Range (1.0f, 3.0f);
@@ -42,7 +56,8 @@ public class ObjectSpawner : MonoBehaviour {
 	}
 
 	void spawnTrees () {
-		Instantiate (trees[(Random.Range (0, trees.Length))], new Vector3 (player.transform.position.x + 70, 1, Random.Range (3, 22)), Quaternion.identity);
+		GameObject tree=Instantiate (trees[(Random.Range (0, trees.Length))], new Vector3 (player.transform.position.x + 70, 1, Random.Range (3, 22)), Quaternion.Euler(0,Random.Range(0,360),0))as GameObject;
+		tree.transform.localScale=new Vector3(Random.Range(0.9f,1.5f),Random.Range(0.9f,1.5f),Random.Range(0.9f,1.5f));
 		treeSpawnTimer = 0.5f;
 	}
 

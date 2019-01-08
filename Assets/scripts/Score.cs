@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
 public GameObject scoreUI;
-public GameObject highScoreUI;		
+public GameObject highScoreUI;	
+public GameObject coinsUI;	
 	
 	// Update is called once per frame
 	void Update () {
@@ -15,6 +16,7 @@ public GameObject highScoreUI;
 		}
 		scoreUI.GetComponent<Text>().text=("Score:"+DataManagement.datamanagement.currentScore.ToString());
 		highScoreUI.GetComponent<Text>().text=("High Score: "+DataManagement.datamanagement.highScore.ToString());
+        coinsUI.GetComponent<Text>().text=("coins collected: "+DataManagement.datamanagement.CoinsCollected.ToString());
 
 	}
 }
