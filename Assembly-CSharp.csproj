@@ -60,12 +60,12 @@
      <Compile Include="Assets\scripts\FuelBar.cs" />
      <Compile Include="Assets\scripts\GameInit.cs" />
      <Compile Include="Assets\scripts\LoadScreen.cs" />
-     <Compile Include="Assets\scripts\ObjectSpawner.cs" />
      <Compile Include="Assets\scripts\PlayerCollision.cs" />
      <Compile Include="Assets\scripts\PlayerControls.cs" />
      <Compile Include="Assets\scripts\PlayerMove.cs" />
      <Compile Include="Assets\scripts\RotateObject.cs" />
      <Compile Include="Assets\scripts\Score.cs" />
+     <Compile Include="Assets\scripts\Spawner.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

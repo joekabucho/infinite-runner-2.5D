@@ -19,7 +19,7 @@ public class AudioFX : MonoBehaviour {
 			GetComponent<AudioSource>().PlayOneShot(death,1.0f);
 		}
 	}
-	void OnTriggerEnter(Collision trig){
+	void OnTriggerEnter(Collider trig){
 		if(trig.gameObject.tag=="Coin"){
 			GetComponent<AudioSource>().PlayOneShot(coinCollect,1.0f);
 		}

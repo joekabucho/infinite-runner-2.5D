@@ -5,8 +5,8 @@ using UnityEngine;
 public class LoadScreen : MonoBehaviour {
 
 	// Use this for initialization
-	public void LoadToScene (int sceneToLOad) {
-		Application.LoadLevel(sceneToLOad);
+	public void LoadToScene (int sceneToLoad) {
+		Application.LoadLevel(sceneToLoad);
 	}
 	
 

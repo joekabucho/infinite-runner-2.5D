@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2b6e6a8c277de4ff2ab3c7c47cea1d4a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {fileID: 1848668900424448, guid: 7a1d95439e18a427b9fd82962e373ffb, type: 2}
+  - enemies: {fileID: 1914358177540774, guid: 16289a4e1b65e473ab5eb43780589412, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
